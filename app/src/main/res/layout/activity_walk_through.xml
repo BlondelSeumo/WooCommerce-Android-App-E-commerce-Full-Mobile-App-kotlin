@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:ignore="MissingPrefix">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_standard_new"
+        android:layout_marginTop="@dimen/spacing_xlarge"
+        android:layout_marginEnd="@dimen/spacing_standard_new"
+        android:layout_marginBottom="@dimen/spacing_standard_new"
+        android:gravity="center_horizontal"
+        android:text="@string/lbl_hi_we_re_woobox"
+        android:textAppearance="@style/FontBold"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/font_size_xlarge"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_standard_new"
+        android:layout_marginTop="@dimen/spacing_standard"
+        android:layout_marginEnd="@dimen/spacing_standard_new"
+        android:gravity="center_horizontal"
+        android:lines="2"
+        android:text="@string/lbl_subheading"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/font_size_medium"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/tvHeading" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/ViewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/spacing_middle"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingLeft="@dimen/spacing_xxlarge"
+        android:paddingRight="@dimen/spacing_xxlarge"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubHeading" />
+
+    <com.iqonic.woobox.utils.dotsindicator.DotsIndicator
+        android:id="@+id/dots"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/spacing_standard"
+        android:gravity="center"
+        app:dot_height="@dimen/spacing_standard"
+        app:dot_width="@dimen/spacing_standard"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ViewPager" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStatShopping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_xlarge"
+        android:layout_marginTop="@dimen/spacing_standard_new"
+        android:layout_marginEnd="@dimen/spacing_xlarge"
+        style="@style/MaterialButtonStyle.Filled"
+        android:text="@string/text_start_to_shopping"
+        android:textAllCaps="false"
+        android:textColor="@color/commonColorWhite"
+        app:layout_constraintTop_toBottomOf="@id/dots" />
+
+    <LinearLayout
+        android:id="@+id/llSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/btnStatShopping">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_already_have_a_account"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/font_size_medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_control_half"
+            android:text="@string/lbl_sign_in"
+            android:textAppearance="@style/FontBold"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/font_size_medium" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:layout_marginStart="@dimen/spacing_standard_new"
+            android:layout_marginTop="@dimen/spacing_standard_new"
+            android:layout_marginEnd="@dimen/spacing_standard_new"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Heading"
+                android:text="@string/lbl_card_number" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edDigit1"
+                    style="@style/cardNumberEditText">
+
+                    <requestFocus />
+                </EditText>
+
+                <EditText
+                    android:id="@+id/edDigit2"
+                    style="@style/cardNumberEditText"
+                    android:layout_marginStart="@dimen/spacing_standard" />
+
+                <EditText
+                    android:id="@+id/edDigit3"
+                    style="@style/cardNumberEditText"
+
+                    android:layout_marginStart="@dimen/spacing_standard" />
+
+                <EditText
+                    android:id="@+id/edDigit4"
+                    style="@style/cardNumberEditText"
+
+                    android:layout_marginStart="@dimen/spacing_standard" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_border_edittext"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_6sdp">
+
+
+                    <Spinner
+                        android:id="@+id/spMonth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_control"
+                        android:layout_marginEnd="@dimen/spacing_control" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_standard"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_border_edittext"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_6sdp">
+
+
+                    <Spinner
+                        android:id="@+id/spYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_control"
+                        android:layout_marginEnd="@dimen/spacing_control" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/Heading"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:text="CVV" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_middle">
+
+                <EditText
+                    android:id="@+id/edCvv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_border_edittext"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberPassword"
+                    android:letterSpacing="0.2"
+                    android:maxLength="3"
+                    android:padding="@dimen/spacing_standard"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/font_size_normal" />
+
+                <ImageView
+                    android:id="@+id/ivShowPwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="@string/text_todo"
+                    android:padding="@dimen/_6sdp"
+                    android:tint="@color/black"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_eye_line" />
+
+                <ImageView
+                    android:id="@+id/ivHidePwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="@string/text_todo"
+                    android:padding="@dimen/_6sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_eye_off_line"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/Heading"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:text="Card Holder Name" />
+
+            <EditText
+                android:id="@+id/edHolderName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:background="@drawable/bg_rounded_border_edittext"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:padding="@dimen/spacing_standard"
+                android:textColor="@color/textColorSecondary"
+                android:textSize="@dimen/font_size_normal" />
+
+            <include
+                layout="@layout/layout_paymentdetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/spacing_standard_new" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmit"
+                style="@style/MaterialButtonStyle.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:shadowColor="@color/colorPrimary"
+                android:text="@string/lbl_add_card"
+                android:textAppearance="@style/FontMedium" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

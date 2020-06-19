@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.iqonic.woobox.models.Color" />
+
+        <variable
+            name="callback"
+            type="com.iqonic.woobox.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_standard"
+            android:onClick="@{(view) -> callback.onClick(view,model)}">
+            <TextView
+                android:id="@+id/tvColor"
+                android:textAppearance="@style/FontMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/spacing_middle"
+                android:paddingEnd="@dimen/spacing_middle"
+                android:paddingTop="@dimen/spacing_control"
+                android:paddingBottom="@dimen/spacing_control"
+                android:background="@drawable/bg_color"
+                android:gravity="center"
+                android:src="@drawable/ic_check"
+                android:textColor="@color/textColorPrimary"
+                tools:text="Black"
+                android:textSize="@dimen/font_size_small"
+                />
+
+            <View
+                android:id="@+id/viewColor"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:background="@drawable/bg_circle_color" />
+
+            <ImageView
+                android:id="@+id/ivColorChecked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_circle_color"
+                android:padding="@dimen/spacing_control"
+                android:src="@drawable/ic_check"
+                android:tint="@color/white"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

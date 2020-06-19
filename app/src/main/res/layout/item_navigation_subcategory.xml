@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.iqonic.woobox.models.SubCategory" />
+
+        <variable
+            name="callback"
+            type="com.iqonic.woobox.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <TextView
+            android:id="@+id/tvSubCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size_small"
+            android:textColor="@color/textColorSecondary"
+            android:padding="@dimen/spacing_middle"
+            android:layout_marginStart="@dimen/_28sdp"
+            android:text="@{model.subcategory_name}" />
+
+</LinearLayout>
+</layout>

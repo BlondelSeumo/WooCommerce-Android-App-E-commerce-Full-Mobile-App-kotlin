@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.iqonic.woobox.utils.CustomSwipeToRefresh xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:id="@+id/scrollView"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_head"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layoutDirection="locale"
+                android:layout_height="@dimen/_180sdp">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/homeSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="false" />
+
+                <com.iqonic.woobox.utils.dotsindicator.DotsIndicator
+                    android:id="@+id/dots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/spacing_standard"
+                    app:dot_height="@dimen/spacing_control"
+                    app:dot_width="@dimen/spacing_control" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvCategory"
+                style="@style/RecycleView"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:layout_marginBottom="@dimen/spacing_standard_new"
+                android:paddingEnd="@dimen/spacing_standard_new" />
+
+            <RelativeLayout
+                android:id="@+id/rlRecentSearch"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:layout_marginBottom="@dimen/spacing_standard">
+
+                <TextView
+                    android:id="@+id/lblRecentSearch"
+                    style="@style/Heading"
+                    android:text="@string/lbl_recent_search" />
+
+                <include
+                    android:id="@+id/viewRecentSearch"
+                    layout="@layout/layout_view_all" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvRecentSearch"
+                style="@style/RecycleView"
+                android:paddingStart="@dimen/spacing_standard"
+                android:paddingEnd="@dimen/spacing_standard" />
+
+            <RelativeLayout
+                android:id="@+id/rlNewestProduct"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new">
+
+                <TextView
+                    style="@style/Heading"
+                    android:text="@string/lbl_newest_product" />
+
+                <include
+                    android:id="@+id/viewNewest"
+                    layout="@layout/layout_view_all" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvNewestProduct"
+                style="@style/RecycleView"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:paddingStart="@dimen/spacing_standard"
+                android:paddingEnd="@dimen/spacing_standard" />
+
+            <RelativeLayout
+                android:id="@+id/rlFeatured"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new">
+
+                <TextView
+                    style="@style/Heading"
+                    android:text="@string/lbl_Featured" />
+
+                <include
+                    android:id="@+id/viewFeatured"
+                    layout="@layout/layout_view_all" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvFeaturedProducts"
+                style="@style/RecycleView"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:paddingStart="@dimen/spacing_standard"
+                android:paddingEnd="@dimen/spacing_standard" />
+
+            <RelativeLayout
+                android:id="@+id/rlTestimonials"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new">
+
+                <TextView
+                    style="@style/Heading"
+                    android:text="@string/lbl_testimonials" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvTestimonials"
+                style="@style/RecycleView"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:paddingStart="@dimen/spacing_standard"
+                android:paddingEnd="@dimen/spacing_standard"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new">
+
+                <ImageView
+                    android:id="@+id/ivBanner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp"
+                    android:scaleType="fitXY" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlOffer"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new">
+
+                <TextView
+                    style="@style/Heading"
+                    android:text="@string/lbl_offers" />
+
+                <include
+                    android:id="@+id/viewOffer"
+                    layout="@layout/layout_view_all" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvOfferProducts"
+                style="@style/RecycleView"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:paddingStart="@dimen/spacing_standard"
+                android:paddingEnd="@dimen/spacing_standard" />
+
+            <RelativeLayout
+                android:id="@+id/rlDeal"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new">
+
+                <TextView
+                    style="@style/Heading"
+                    android:text="@string/lbl_deal" />
+
+                <include
+                    android:id="@+id/viewDeal"
+                    layout="@layout/layout_view_all" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvDealProducts"
+                style="@style/RecycleView"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:paddingStart="@dimen/spacing_standard"
+                android:paddingEnd="@dimen/spacing_standard" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new">
+
+                <ImageView
+                    android:id="@+id/ivBanner2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp"
+                    android:scaleType="fitXY" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlSuggested"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new">
+
+                <TextView
+                    style="@style/Heading"
+                    android:text="@string/lbl_suggested" />
+
+                <include
+                    android:id="@+id/viewSuggested"
+                    layout="@layout/layout_view_all" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvSuggestedProducts"
+                style="@style/RecycleView"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:paddingStart="@dimen/spacing_standard"
+                android:paddingEnd="@dimen/spacing_standard" />
+
+            <RelativeLayout
+                android:id="@+id/rlYouMayLike"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new">
+
+                <TextView
+                    style="@style/Heading"
+                    android:text="@string/lbl_you_may_like" />
+
+                <include
+                    android:id="@+id/viewYouMayLike"
+                    layout="@layout/layout_view_all" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvYouMayLikeProducts"
+                style="@style/RecycleView"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:paddingStart="@dimen/spacing_standard"
+                android:paddingEnd="@dimen/spacing_standard" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginBottom="@dimen/spacing_large">
+
+                <ImageView
+                    android:id="@+id/ivBanner3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp"
+                    android:scaleType="fitXY" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</com.iqonic.woobox.utils.CustomSwipeToRefresh>

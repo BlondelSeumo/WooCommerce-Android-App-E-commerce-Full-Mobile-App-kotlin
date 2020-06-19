@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.iqonic.woobox.models.ProductReviewData" />
+
+        <variable
+            name="callback"
+            type="com.iqonic.woobox.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_standard">
+
+        <TextView
+            android:id="@+id/tvProductReviewRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_standard_new"
+            android:layout_marginEnd="@dimen/spacing_control"
+            android:layout_marginTop="@dimen/spacing_control_half"
+            android:background="@drawable/bg_ractangle_rounded"
+            android:drawableEnd="@drawable/ic_star_black"
+            android:drawablePadding="@dimen/spacing_control"
+            android:drawableTint="@color/commonColorWhite"
+            android:paddingStart="@dimen/spacing_middle"
+            android:paddingTop="@dimen/spacing_control_half"
+            android:paddingEnd="@dimen/spacing_xmedium"
+            android:paddingBottom="@dimen/spacing_control_half"
+            android:text="@string/lbl_5"
+            android:textColor="@color/commonColorWhite"
+            android:textSize="@dimen/font_size_small" />
+
+        <TextView
+            android:id="@+id/tvProductReviewCmt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginStart="@dimen/spacing_standard"
+            android:layout_marginEnd="@dimen/spacing_control"
+            android:layout_toEndOf="@id/tvProductReviewRating"
+            android:textAppearance="@style/FontMedium"
+            android:textColor="@color/textColorPrimary"
+            tools:text="Max Boomarang"
+            android:textSize="@dimen/font_size_small" />
+
+        <ImageView
+            android:id="@+id/ivMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/spacing_standard"
+            android:onClick="@{(view) -> callback.onClick(view,model)}"
+            android:padding="@dimen/_6sdp"
+            android:tint="@color/textColorPrimary"
+            android:src="@drawable/ic_more_vert_black_24dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tvProductReviewSubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            tools:text="Nice bag,nice quntity ,\ncool bag"
+            android:layout_marginTop="@dimen/spacing_standard"
+            android:layout_below="@id/tvProductReviewDuration"
+            android:layout_marginStart="@dimen/spacing_standard"
+            android:layout_toEndOf="@id/tvProductReviewRating"
+            android:textColor="@color/textColorSecondary" />
+
+        <TextView
+            android:id="@+id/tvProductReviewDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="05 Feb 2020"
+            android:layout_below="@id/tvProductReviewCmt"
+            android:layout_toEndOf="@id/tvProductReviewRating"
+            android:layout_marginStart="@dimen/spacing_control"
+            android:layout_marginEnd="@dimen/spacing_standard_new"
+            android:gravity="end|center_vertical"
+            android:textColor="@color/textColorSecondary" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/spacing_standard"
+            android:layout_below="@id/tvProductReviewSubHeading"
+            android:background="@color/view_color" />
+
+    </RelativeLayout>
+</layout>

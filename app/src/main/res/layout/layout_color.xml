@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/spacing_control_half"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/ivColor"
+        android:layout_width="@dimen/spacing_standard"
+        android:layout_height="@dimen/spacing_standard"
+        android:background="@drawable/bg_productcolor"
+        android:contentDescription="@string/text_todo"
+        android:tint="@color/dots_color" />
+</LinearLayout>

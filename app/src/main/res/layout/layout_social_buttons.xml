@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/spacing_standard"
+    android:layout_marginTop="@dimen/spacing_standard"
+    android:layout_marginEnd="@dimen/spacing_standard">
+
+    <ImageView
+        android:id="@+id/ivFaceBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_control"
+        android:layout_weight="1"
+        android:background="@drawable/bg_ractangle_rounded"
+        android:backgroundTint="@color/faceBooK_blue"
+        android:src="@drawable/ic_facebook_fill"
+        android:paddingTop="@dimen/spacing_standard"
+        android:paddingBottom="@dimen/spacing_standard"
+        android:textSize="@dimen/font_size_normal"
+        android:textColor="@color/commonColorWhite"
+        android:text="@string/lbl_facebook"
+        android:drawablePadding="@dimen/spacing_middle"
+        android:textAppearance="@style/FontBold"
+        android:textStyle="bold"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/ivGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_control"
+        android:layout_weight="1"
+        android:background="@drawable/bg_ractangle_rounded"
+        android:backgroundTint="@color/google_red"
+        android:src="@drawable/ic_google"
+        android:paddingTop="@dimen/spacing_standard"
+        android:paddingBottom="@dimen/spacing_standard"
+        android:textSize="@dimen/font_size_normal"
+        android:textColor="@color/commonColorWhite"
+        android:text="@string/lbl_google"
+        android:drawablePadding="@dimen/spacing_middle"
+        android:textAppearance="@style/FontBold"
+        android:textStyle="bold"
+
+        />
+
+</LinearLayout>

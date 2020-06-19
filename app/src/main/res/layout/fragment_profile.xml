@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingBottom="@dimen/spacing_standard_new">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/editProfileImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_xlarge">
+
+                <com.iqonic.woobox.utils.CircleImageView
+                    android:id="@+id/ivProfileImage"
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/spacing_standard"
+                    android:layout_marginEnd="@dimen/spacing_standard"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_profile"
+                    app:civ_border_color="@color/view_color"
+                    app:civ_border_width="@dimen/_4sdp" />
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/spacing_standard"
+                    android:layout_marginBottom="@dimen/spacing_standard_new"
+                    android:background="@drawable/circle_white"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/ic_camera"
+                    android:tint="@color/colorPrimaryDark"
+                    app:layout_anchor="@id/ivProfileImage"
+                    app:layout_anchorGravity="end|bottom" />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xxlarge">
+
+                <EditText
+                    android:id="@+id/edtFirstName"
+                    style="@style/FieldRounded"
+                    android:inputType="textCapWords"
+                    android:layout_marginEnd="@dimen/spacing_control"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_first_name"
+                    android:gravity="start"
+                    android:nextFocusDown="@+id/edtLastName"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/edtLastName"
+                    style="@style/FieldRounded"
+                    android:inputType="textCapWords"
+                    android:gravity="start"
+                    android:layout_marginStart="@dimen/spacing_control"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_last_name"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:background="@drawable/bg_ractangle_rounded_stroke">
+
+                <Spinner
+                    android:id="@+id/spnGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_standard"
+                    android:entries="@array/gender" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/edtMobileNo"
+                style="@style/FieldRounded"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:hint="@string/hint_mobile_no"
+                android:inputType="number"
+                android:visibility="gone"
+                android:maxEms="12"
+                android:gravity="start"
+
+                android:maxLength="12" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                style="@style/FieldRounded"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:hint="@string/hint_email"
+                android:gravity="start"
+
+                android:inputType="textEmailAddress" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveProFile"
+                style="@style/MaterialButtonStyle.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:layout_marginBottom="@dimen/spacing_standard"
+                android:text="@string/lbl_save_profile"
+                android:textSize="@dimen/font_size_medium" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnChangePassword"
+                style="@style/MaterialButtonStyle.Stroked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:layout_marginBottom="@dimen/spacing_standard"
+                android:text="@string/lbl_change_pswd"
+                android:textColor="@color/textColorPrimary"
+                android:visibility="gone"
+                android:textSize="@dimen/font_size_medium"
+                app:strokeColor="@color/editText_background" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDeactivate"
+                style="@style/MaterialButtonStyle.Stroked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:text="@string/lbl_account_deactivate"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_medium"
+                android:visibility="gone"
+                app:strokeColor="@color/editText_background" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.iqonic.woobox.models.OrderTrack" />
+
+        <variable
+            name="callback"
+            type="com.iqonic.woobox.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingPrefix"
+        android:onClick="@{(view) -> callback.onClick(view,model)}"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rlMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.iqonic.woobox.utils.LineView
+                android:id="@+id/ivLine"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_centerHorizontal="true"
+                app:line_color="@color/track_grey" />
+
+            <com.iqonic.woobox.utils.CircleView
+                android:id="@+id/ivCircle"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                app:radius="@dimen/_4sdp"
+                app:circle_gravity="top"
+                app:color="@color/track_grey" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvText1"
+            android:layout_toEndOf="@id/rlMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/FontMedium"
+            android:layout_marginTop="-5dp"
+            android:drawablePadding="@dimen/spacing_standard"
+            android:layout_marginStart="@dimen/spacing_standard"
+            android:textSize="@dimen/font_size_medium"
+            android:textColor="@color/textColorPrimary"
+            android:text="@string/lbl_order" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_below="@id/tvText1"
+            android:layout_toEndOf="@id/rlMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/FontMedium"
+            android:layout_marginStart="@dimen/spacing_middle"
+            android:textSize="@dimen/font_size_nano"
+            android:textColor="@color/textColorSecondary" />
+    </RelativeLayout>
+</layout>

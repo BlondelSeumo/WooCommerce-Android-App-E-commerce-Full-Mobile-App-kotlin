@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.iqonic.woobox.models.Address" />
+
+        <variable
+            name="callback"
+            type="com.iqonic.woobox.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+<com.iqonic.woobox.utils.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:dragEdge="right"
+    app:mode="same_level"
+    android:id="@+id/swipeLayout"
+    >
+    <FrameLayout
+        android:id="@+id/delete_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            >
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@color/commonColorWhite"
+                android:onClick="@{(view) -> callback.onClick(view,model)}"
+                android:src="@drawable/ic_edit"
+                android:layout_marginTop="@dimen/spacing_control"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:layout_marginStart="@dimen/spacing_standard"
+                android:layout_marginBottom="@dimen/spacing_standard"
+                />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@color/colorPrimary"
+                android:src="@drawable/ic_delete"
+                android:tint="@color/commonColorWhite"
+                android:layout_marginTop="@dimen/spacing_control"
+                android:layout_marginStart="@dimen/spacing_standard"
+                android:layout_marginBottom="@dimen/spacing_standard"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:onClick="@{(view) -> callback.onClick(view,model)}"
+                />
+
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/front_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+            <LinearLayout
+                android:id="@+id/addressLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:layout_marginBottom="@dimen/spacing_middle"
+                android:paddingStart="@dimen/spacing_middle"
+                android:paddingTop="@dimen/spacing_middle"
+                android:paddingEnd="@dimen/spacing_standard_new"
+                android:paddingBottom="@dimen/spacing_middle"
+                android:onClick="@{(view) -> callback.onClick(view,model)}"
+                android:background="@color/itemText_background">
+                <RadioButton
+                    android:id="@+id/rbDefaultAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:buttonTint="@color/radiobuttonTint"
+                    android:layout_marginEnd="@dimen/spacing_standard"
+                    />
+                <include
+                    android:id="@+id/included"
+                    layout="@layout/item_address"/>
+            </LinearLayout>
+
+    </FrameLayout>
+
+</com.iqonic.woobox.utils.swipereveallayout.SwipeRevealLayout>
+</layout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_margin="@dimen/spacing_standard_new"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/spacing_standard"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:id="@+id/rlMainReward"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_170sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_standard_new">
+
+            <ImageView
+                android:id="@+id/ivReward"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/ic_app_icon" />
+
+            <TextView
+                android:id="@+id/tvRewardLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/spacing_middle"
+                android:textAppearance="@style/FontSemiBold"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_xlarge" />
+        </LinearLayout>
+
+        <com.iqonic.woobox.utils.scratch.ScratchTextView
+            android:id="@+id/scratch_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/transparent"
+            android:textSize="90sp"
+            app:overlay_image="@drawable/ic_scratch_pattern" />
+
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

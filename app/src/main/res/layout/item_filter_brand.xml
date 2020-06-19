@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.iqonic.woobox.models.Brand" />
+
+        <variable
+            name="callback"
+            type="com.iqonic.woobox.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:onClick="@{(view) -> callback.onClick(view,model)}"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/spacing_standard_new"
+        android:paddingTop="@dimen/spacing_middle"
+        android:paddingEnd="@dimen/spacing_standard"
+        android:paddingBottom="@dimen/spacing_middle">
+
+        <TextView
+            android:id="@+id/tvBrandName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.brand_name}"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/font_size_medium" />
+
+        <ImageView
+            android:id="@+id/ivSelect"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/spacing_control"
+            android:background="@drawable/bg_ractangal"
+            android:padding="@dimen/spacing_control_half" />
+    </RelativeLayout>
+</layout>

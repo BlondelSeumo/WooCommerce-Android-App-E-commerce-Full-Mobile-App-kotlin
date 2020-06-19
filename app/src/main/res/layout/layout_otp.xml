@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_standard_new"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_standard_new"
+            android:text="@string/lbl_we_have_sent_you_mail_with_verification_code_to"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/font_size_small" />
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_standard_new"
+            android:layout_marginEnd="@dimen/spacing_standard_new"
+            android:text="@string/lbl_tep_email"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_size_small" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xxlarge"
+            android:layout_marginBottom="@dimen/spacing_xmedium"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        <EditText
+                android:id="@+id/edDigit1"
+                android:layout_width="@dimen/spacing_xlarge"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:background="@color/transparent"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/font_size_xlarge">
+
+        </EditText>
+
+        <EditText
+                android:id="@+id/edDigit2"
+                android:layout_width="@dimen/spacing_xlarge"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:imeOptions="actionNext"
+                android:background="@drawable/bg_unselected_dot"
+                android:inputType="number"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/font_size_xlarge"/>
+
+        <EditText
+                android:id="@+id/edDigit3"
+                android:layout_width="@dimen/spacing_xlarge"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:background="@drawable/bg_unselected_dot"
+                android:inputType="number"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/font_size_xlarge"/>
+
+        <EditText
+                android:id="@+id/edDigit4"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:background="@drawable/bg_unselected_dot"
+                android:layout_width="@dimen/spacing_xlarge"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/font_size_xlarge"/>
+
+    </LinearLayout>
+    <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_standard_new"
+            android:layout_marginBottom="@dimen/spacing_standard_new"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/font_size_normal"
+            android:textAppearance="@style/FontBold"
+            android:textStyle="bold"
+            tools:text="00:59"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/spacing_standard_new"
+            android:gravity="center_horizontal"
+            android:id="@+id/llResend"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_medium"
+                android:text="@string/lbl_did_not_receive"/>
+        <TextView
+                android:id="@+id/tvResend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_control_half"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/font_size_medium"
+                android:text="@string/lbl_resend_code"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:id="@+id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/lbl_filter"
+            android:textColor="@color/textColorPrimary"
+            android:textAppearance="@style/FontBold"
+            android:textSize="@dimen/font_size_large" />
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/spacing_control"
+            android:padding="@dimen/spacing_control"
+            android:src="@drawable/ic_close_black" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_top_shadow">
+
+        <TextView
+            android:id="@+id/tvReset"
+            style="@style/BottomButton.White"
+            android:text="@string/lbl_reset" />
+
+        <TextView
+            android:id="@+id/tvApply"
+            style="@style/BottomButton.Primary"
+            android:text="@string/lbl_apply" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/lay_button"
+        android:layout_below="@id/rl_head">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/spacing_standard"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/spacing_standard_new">
+
+            <TextView
+                style="@style/Heading"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:text="@string/lbl_categories"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_large"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvSubCategories"
+                    style="@style/RecycleView" />
+
+                <TextView
+                    android:id="@+id/tvShowMore"
+                    style="@style/Heading"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/spacing_control"
+                    android:drawableRight="@drawable/ic_arrow_down"
+                    android:text="@string/lbl_more"
+                    android:textSize="@dimen/font_size_micro" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Heading"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:text="@string/lbl_price" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_large"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/spacing_xmedium"
+                    android:text="@string/lbl_min"
+                    android:textColor="@color/textColorPrimary" />
+
+                <com.iqonic.woobox.utils.rangeBar.RangeBar
+                    android:id="@+id/rangebar1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_control"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginEnd="@dimen/spacing_control"
+                    android:layout_weight="1"
+                    app:mrb_barWeight="@dimen/_8sdp"
+                    app:mrb_connectingLineColor="@color/colorPrimary"
+                    app:mrb_connectingLineWeight="@dimen/_7sdp"
+                    app:mrb_leftSelectorColor="@color/colorPrimary"
+                    app:mrb_pinColor="@color/colorPrimary"
+                    app:mrb_pinTextColor="@color/white"
+                    app:mrb_rangeBar="true"
+                    app:mrb_rangeBarColor="@color/checkbox_color"
+                    app:mrb_rangeBar_rounded="true"
+                    app:mrb_rightSelectorColor="@color/colorPrimary"
+                    app:mrb_selectorBoundaryColor="@color/white"
+                    app:mrb_selectorColor="@color/colorPrimary"
+                    app:mrb_selectorSize="@dimen/_5sdp"
+                    app:mrb_temporaryPins="true"
+                    app:mrb_tickDefaultColor="@android:color/transparent"
+                    app:mrb_tickLabelColor="@android:color/transparent"
+                    app:mrb_tickLabelSelectedColor="@color/textColorPrimary"
+                    app:mrb_tickLabelSize="7sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/spacing_xmedium"
+                    android:text="@string/lbl_max"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/font_size_small" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlBrand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new">
+
+                <TextView
+                    style="@style/Heading"
+                    android:text="@string/lbl_brands" />
+
+                <TextView
+                    android:id="@+id/tvSelectAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/lbl_select_all"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/font_size_small" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvBrands"
+                style="@style/RecycleView"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:nestedScrollingEnabled="true"
+                android:paddingStart="@dimen/spacing_standard_new"
+                android:paddingEnd="@dimen/spacing_standard_new" />
+
+            <TextView
+                android:id="@+id/tvColors"
+                style="@style/Heading"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:text="@string/lbl_colors" />
+
+            <include layout="@layout/layout_colors" />
+
+            <TextView
+                android:id="@+id/tvSize"
+                style="@style/Heading"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:text="@string/lbl_size" />
+
+            <include layout="@layout/layout_size" />
+
+            <RelativeLayout
+                android:id="@+id/rlDiscount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/Heading"
+                    android:layout_centerVertical="true"
+                    android:text="@string/lbl_discount" />
+
+                <ImageView
+                    android:id="@+id/ivExpandDiscount"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/spacing_middle"
+                    android:src="@drawable/ic_drop_down" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvDiscount"
+                style="@style/RecycleView"
+                android:layout_marginTop="@dimen/spacing_control"
+                android:paddingStart="@dimen/spacing_standard_new"
+                android:paddingEnd="@dimen/spacing_standard_new"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/rlRatings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/Heading"
+                    android:layout_centerVertical="true"
+                    android:text="@string/lbl_ratings" />
+
+                <ImageView
+                    android:id="@+id/ivExpandRating"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/spacing_middle"
+                    android:src="@drawable/ic_drop_down" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvRatings"
+                style="@style/RecycleView"
+                android:layout_marginTop="@dimen/spacing_control"
+                android:paddingStart="@dimen/spacing_standard_new"
+                android:paddingEnd="@dimen/spacing_standard_new" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

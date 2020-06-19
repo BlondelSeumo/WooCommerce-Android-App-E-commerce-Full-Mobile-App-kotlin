@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvQuantity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/spacing_middle"
+    android:paddingBottom="@dimen/spacing_middle"
+    android:gravity="center_horizontal"
+    android:foreground="?selectableItemBackground"
+    android:text="1"
+    android:textAppearance="@style/FontMedium"
+    android:textColor="@color/textColorPrimary"
+    android:textSize="@dimen/font_size_normal" />

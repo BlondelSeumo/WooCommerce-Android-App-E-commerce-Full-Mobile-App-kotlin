@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "654421987855",
+    "firebase_url": "https://woobox-818b2.firebaseio.com",
+    "project_id": "woobox-818b2",
+    "storage_bucket": "woobox-818b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654421987855:android:ac02b77a6d6ab6533e097a",
+        "android_client_info": {
+          "package_name": "com.iqonic.woobox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654421987855-9efks032v8oanl7k9f82qnbdobg5h8m4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu15jDGtIeQgWybeupHx-8qZKgaTYxowg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654421987855-9efks032v8oanl7k9f82qnbdobg5h8m4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

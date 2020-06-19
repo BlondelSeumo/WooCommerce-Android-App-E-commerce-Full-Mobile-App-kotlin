@@ -1,0 +1,43 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.iqonic.woobox.models.Size" />
+
+        <variable
+            name="callback"
+            type="com.iqonic.woobox.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:id="@+id/llSize"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ivSizeChecked"
+            android:textAppearance="@style/FontMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> callback.onClick(view,model)}"
+            android:layout_margin="@dimen/spacing_standard"
+            android:gravity="center"
+            android:background="@drawable/bg_size"
+            android:paddingStart="@dimen/spacing_middle"
+            android:paddingEnd="@dimen/spacing_middle"
+            android:paddingTop="@dimen/spacing_control"
+            android:paddingBottom="@dimen/spacing_control"
+            android:src="@drawable/ic_check"
+            android:textColor="@color/textColorPrimary"
+            tools:text="XXL"
+            android:textSize="@dimen/font_size_small"
+            android:tint="@color/white"
+            tools:ignore="MissingPrefix" />
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.iqonic.woobox.models.CategoryData" />
+
+        <variable
+            name="callback"
+            type="com.iqonic.woobox.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/llMen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="@{(view) -> callback.onClick(view,model)}"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/spacing_standard_new"
+        android:layout_marginTop="@dimen/spacing_standard"
+       >
+
+        <ImageView
+            android:id="@+id/ivCategory"
+            style="@style/CatIcon"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/spacing_control"
+            android:layout_marginEnd="@dimen/spacing_control"
+            android:src="@drawable/ic_sihrt"
+            android:backgroundTint="@color/background_color_2"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/spacing_middle"
+             />
+
+        <TextView
+            android:id="@+id/tvCatName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:lines="2"
+            android:singleLine="false"
+            android:textSize="@dimen/font_size_micro"
+            android:textAppearance="@style/FontSemiBold"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="@dimen/spacing_control"
+            android:paddingBottom="@dimen/spacing_control"
+            android:textColor="@color/textColorPrimary"
+            tools:text="Clothes ClothesClothes" />
+
+    </LinearLayout>
+</layout>

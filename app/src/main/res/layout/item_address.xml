@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="start"
+        tools:ignore="MissingPrefix">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingTop="@dimen/spacing_control"
+                android:paddingBottom="@dimen/spacing_control"
+                android:textAppearance="@style/FontSemiBold"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_medium"
+                tools:ignore="MissingPrefix" />
+
+
+            <TextView
+                android:id="@+id/tvEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@color/white"
+                android:paddingStart="@dimen/spacing_middle"
+                android:paddingTop="@dimen/spacing_control"
+                android:paddingEnd="@dimen/spacing_middle"
+                android:paddingBottom="@dimen/spacing_control"
+                android:text="@string/lbl_edit"
+                android:textAppearance="@style/FontMedium"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/font_size_micro"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/tvDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@color/white"
+                android:paddingStart="@dimen/spacing_middle"
+                android:paddingTop="@dimen/spacing_control"
+                android:paddingBottom="@dimen/spacing_control"
+                android:paddingEnd="@dimen/spacing_middle"
+                android:text="Default"
+                android:textAppearance="@style/FontMedium"
+                android:textColor="@color/radiobuttonTint"
+                android:textSize="@dimen/font_size_micro"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_standard"
+            android:gravity="start"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/font_size_small" />
+        <TextView
+            android:id="@+id/tvMobileNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_standard"
+            tools:text="(898)562-3523"
+            android:gravity="start"
+            android:textAppearance="@style/FontMedium"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/font_size_small" />
+
+    </LinearLayout>
+
+</layout>

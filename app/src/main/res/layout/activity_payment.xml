@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".activity.PaymentActivity">
+
+    <include
+        android:id="@+id/tb"
+        layout="@layout/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tb"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPaymentGateways"
+                android:layout_marginBottom="@dimen/_16sdp"
+                style="@style/RecycleView" />
+
+            <TextView
+                android:id="@+id/tvPayWithPayPal"
+                style="@style/PaymentOption"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:drawableStart="@drawable/ic_bank_card_line"
+                android:text="@string/lbl_pay_with_debit_credit_card"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvNetBanking"
+                style="@style/PaymentOption"
+                android:drawableStart="@drawable/ic_earth_line"
+                android:text="@string/lbl_net_banking"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvCash"
+                style="@style/PaymentOption"
+                android:drawableStart="@drawable/ic_bank_card_line"
+                android:text="@string/lbl_cash_on_delivery"
+                android:visibility="gone" />
+
+            <include layout="@layout/layout_paymentdetail" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

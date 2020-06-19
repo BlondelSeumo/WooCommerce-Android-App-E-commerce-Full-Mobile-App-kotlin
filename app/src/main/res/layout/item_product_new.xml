@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/spacing_standard"
+    android:layout_marginEnd="@dimen/spacing_standard"
+    android:layout_marginBottom="@dimen/spacing_standard"
+    android:focusable="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rlItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivProduct"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:background="@color/item_background"
+            android:contentDescription="@string/text_todo"
+            android:padding="@dimen/_1sdp"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingTop="@dimen/spacing_control"
+            android:paddingBottom="@dimen/spacing_standard">
+
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textAppearance="@style/FontSemiBold"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_micro" />
+             <RatingBar
+                 android:id="@+id/ratingBar"
+                 android:layout_below="@id/tvDiscountPrice"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/spacing_control_half"
+                 android:progressTint="@color/yellow"
+                 android:rating="4"
+                 style="@style/Widget.AppCompat.RatingBar.Small"/>
+            <TextView
+                android:id="@+id/tvDiscountPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvProductName"
+                android:layout_marginTop="@dimen/spacing_control_half"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/font_size_medium"
+                android:textAppearance="@style/FontSemiBold"
+                tools:text="$100" />
+
+            <TextView
+                android:id="@+id/tvOriginalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_control"
+                android:layout_toEndOf="@id/tvDiscountPrice"
+                android:layout_alignBottom="@id/tvDiscountPrice"
+                android:layout_marginStart="@dimen/spacing_control"
+                android:layout_marginBottom="1dp"
+                android:singleLine="true"
+                android:textColor="@color/textColorSecondary"
+                android:textSize="@dimen/font_size_small"
+                tools:text="$150" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="@dimen/_280sdp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_ractangal_filled_stroked"
+    android:padding="@dimen/spacing_middle"
+    android:layout_margin="@dimen/spacing_standard"
+    >
+
+    <com.iqonic.woobox.utils.CircleImageView
+        android:id="@+id/ivAuthor"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/spacing_control"
+        android:src="@drawable/ic_profile"/>
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/spacing_control"
+        android:textSize="@dimen/font_size_normal"
+        android:textAppearance="@style/FontMedium"
+       />
+    <TextView
+        android:id="@+id/tvDesignation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorSecondary"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/font_size_medium"
+        tools:text="Developer,Goldenmace IT soulitions"/>
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorPrimary"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/font_size_small"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/spacing_middle"
+        android:layout_marginBottom="@dimen/spacing_control"
+        android:lines="3"
+       />
+
+
+</LinearLayout>

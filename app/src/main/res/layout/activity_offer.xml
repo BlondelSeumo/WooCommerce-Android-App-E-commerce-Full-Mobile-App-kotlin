@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvOffer"
+        style="@style/RecycleView"
+        android:layout_marginStart="@dimen/spacing_control"
+        android:layout_marginTop="@dimen/spacing_standard_new"
+        android:layout_marginEnd="@dimen/spacing_control"
+        android:nestedScrollingEnabled="false"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:spanCount="2" />
+
+    <!--<androidx.core.widget.NestedScrollView
+        android:id="@+id/nsvContent"
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:fillViewport="true"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivOffer1"
+                style="@style/OfferBanner"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/ic_walk" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_standard_new"
+                android:background="@color/itemText_background"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_standard"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:layout_marginEnd="@dimen/spacing_standard">
+
+                    <TextView
+                        android:id="@+id/tvOfferName"
+                        style="@style/Heading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_sunday_special"
+                        android:textSize="@dimen/font_size_large" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/LinearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_standard"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:layout_marginEnd="@dimen/spacing_standard"
+                    android:layout_gravity="center"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txtDay"
+                            style="@style/Countdown" />
+
+                        <TextView
+                            android:id="@+id/txt_Day"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/days"
+                            android:textColor="@color/textColorSecondary" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtHour"
+                            style="@style/Countdown" />
+
+                        <TextView
+                            android:id="@+id/txt_Hour"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/hours"
+                            android:textColor="@color/textColorSecondary"
+                            android:textSize="@dimen/font_size_micro" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/spacing_standard"
+                        android:layout_marginEnd="@dimen/spacing_standard"
+                        android:layout_weight="1"
+                        android:text="@string/text_colon"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/font_size_normal" />
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtMinute"
+                            style="@style/Countdown" />
+
+                        <TextView
+                            android:id="@+id/txt_Minute"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/minutes"
+                            android:textColor="@color/textColorSecondary"
+                            android:textSize="@dimen/font_size_micro" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/spacing_standard"
+                        android:layout_marginEnd="@dimen/spacing_standard"
+                        android:layout_weight="1"
+                        android:text="@string/text_colon"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/font_size_normal" />
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtSecond"
+                            style="@style/Countdown" />
+
+                        <TextView
+                            android:id="@+id/txt_Second"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/seconds"
+                            android:textColor="@color/textColorSecondary"
+                            android:textSize="@dimen/font_size_micro" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivOffer2"
+                style="@style/OfferBanner"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginBottom="@dimen/spacing_standard_new"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/ic_walk"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>-->
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/spacing_standard"
+        android:layout_marginEnd="@dimen/spacing_standard"
+        android:orientation="vertical"
+        tools:ignore="MissingPrefix">
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_control_half"
+        android:layout_marginTop="@dimen/spacing_control"
+        android:padding="@dimen/spacing_medium"
+        android:src="@drawable/ic_keyboard_backspace"
+        android:tint="@color/textColorPrimary" />
+
+    <TextView
+        android:textAppearance="@style/FontBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_standard_new"
+        android:text="@string/lbl_enter_the_code_nto_verify_email"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/font_size_xxlarge"
+        android:textStyle="bold" />
+
+   <include layout="@layout/layout_otp"/>
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSignIn"
+            android:layout_gravity="center_horizontal"
+            style="@style/MaterialButtonStyle.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_standard"
+            android:text="@string/lbl_verify" />
+</LinearLayout>

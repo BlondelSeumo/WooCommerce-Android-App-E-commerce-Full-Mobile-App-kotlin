@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.iqonic.woobox.models.ProductDataNew" />
+
+        <variable
+            name="callback"
+            type="com.iqonic.woobox.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridProduct"
+        android:onClick="@{(view) -> callback.onClick(view,model)}">
+
+        <LinearLayout
+            android:id="@+id/r"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_standard"
+            android:layout_marginEnd="@dimen/spacing_standard"
+            android:layout_marginBottom="@dimen/spacing_standard"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/product_grid_img_height"
+                    android:background="@color/item_background"
+                    android:contentDescription="@string/text_todo"
+                    android:padding="@dimen/stroke_width"
+                    android:scaleType="fitXY" />
+
+                <LinearLayout
+                    android:id="@+id/llDynamicProductColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignBottom="@id/ivProduct"
+                    android:layout_marginTop="@dimen/spacing_standard_new"
+                    android:layout_marginEnd="@dimen/spacing_standard"
+                    android:layout_marginBottom="@dimen/spacing_middle"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/spacing_standard" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/spacing_control"
+                android:paddingBottom="@dimen/spacing_standard">
+
+                <TextView
+                    android:id="@+id/tvProductName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{model.name}"
+                    android:textAppearance="@style/FontSemiBold"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/font_size_micro" />
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_below="@id/tvDiscountPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_control_half"
+                    android:progressTint="@color/yellow"
+                    android:rating="4"
+                    style="@style/Widget.AppCompat.RatingBar.Small"/>
+                <TextView
+                    android:id="@+id/tvDiscountPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvProductName"
+                    android:layout_marginTop="@dimen/spacing_control_half"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/font_size_medium"
+                    android:textAppearance="@style/FontSemiBold"
+                    tools:text="$100" />
+
+                <TextView
+                    android:id="@+id/tvOriginalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_control"
+                    android:layout_toEndOf="@id/tvDiscountPrice"
+                    android:layout_alignBottom="@id/tvDiscountPrice"
+                    android:layout_marginStart="@dimen/spacing_control"
+                    android:layout_marginBottom="1dp"
+                    android:singleLine="true"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/font_size_small"
+                    tools:text="$150" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivFavourite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/spacing_standard"
+            android:layout_marginEnd="@dimen/spacing_middle"
+            android:background="@drawable/bg_circle"
+            android:contentDescription="@string/text_todo"
+            android:onClick="@{(view) -> callback.onClick(view,model)}"
+            android:padding="@dimen/spacing_control"
+            android:src="@drawable/ic_heart"
+            android:tint="@color/textColorSecondary"
+            android:visibility="visible" />
+    </RelativeLayout>
+</layout>

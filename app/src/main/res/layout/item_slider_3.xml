@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/spacing_control"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="0dp">
+    <ImageView
+        android:id="@+id/imgSlider"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:scaleType="centerCrop"
+        android:orientation="vertical" />
+</androidx.cardview.widget.CardView>

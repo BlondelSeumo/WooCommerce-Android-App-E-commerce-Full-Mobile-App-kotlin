@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridProduct"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/spacing_control"
+    android:layout_marginEnd="@dimen/spacing_control"
+    android:layout_marginBottom="@dimen/spacing_standard"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivProduct"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/product_grid_img_height"
+            android:background="@color/item_background"
+            android:contentDescription="@string/text_todo"
+            android:padding="@dimen/stroke_width"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_product2" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/spacing_control"
+        android:paddingTop="@dimen/spacing_standard"
+        android:paddingEnd="@dimen/spacing_control"
+        android:gravity="start"
+        android:paddingBottom="@dimen/spacing_standard">
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_control_half"
+            android:singleLine="true"
+            android:textAppearance="@style/FontMedium"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/font_size_medium" />
+
+        <TextView
+            android:id="@+id/tvOffer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProductName"
+            android:layout_centerVertical="true"
+            android:singleLine="true"
+            android:textColor="@color/green"
+            android:textSize="@dimen/font_size_small" />
+
+    </RelativeLayout>
+</LinearLayout>

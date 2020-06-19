@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.iqonic.woobox.models.MyOrderData.LineItem" />
+
+        <variable
+            name="callback"
+            type="com.iqonic.woobox.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_standard_new"
+        android:layout_marginEnd="@dimen/spacing_standard_new"
+        android:layout_marginBottom="@dimen/spacing_standard_new"
+        android:background="@color/item_background">
+        <ImageView
+            android:id="@+id/ivProduct"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_weight="2"
+            android:visibility="gone"
+            android:background="@color/item_background"
+            android:contentDescription="@string/text_todo"
+            android:src="@drawable/ic_product1" />
+
+        <RelativeLayout
+            android:id="@+id/rl_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/itemText_background"
+            android:paddingStart="@dimen/spacing_standard_new"
+            android:paddingEnd="@dimen/spacing_control">
+
+            <TextView
+                android:id="@+id/tvProductName"
+                android:textAppearance="@style/FontSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:text="@{model.name}"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_normal"
+                tools:ignore="MissingPrefix" />
+
+            <TextView
+                android:id="@+id/tvSeller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvProductName"
+                android:layout_marginTop="@dimen/spacing_control"
+                android:textColor="@color/textColorSecondary"
+                android:textSize="@dimen/font_size_small" />
+
+            <TextView
+                android:id="@+id/tvTotalItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvSeller"
+                android:layout_alignParentStart="true"
+
+                android:layout_marginTop="@dimen/spacing_control_half"
+                android:text="@string/lbl_total_item_count"
+                android:textColor="@color/textColorSecondary"
+                android:textSize="@dimen/font_size_small"
+                tools:ignore="MissingPrefix" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTotalItem"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/spacing_control"
+                android:paddingBottom="@dimen/spacing_standard">
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/FontMedium"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/font_size_normal"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvOriginalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_control"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/font_size_small" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+</layout>

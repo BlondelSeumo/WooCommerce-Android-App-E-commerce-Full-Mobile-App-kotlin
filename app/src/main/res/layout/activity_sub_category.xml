@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_lay"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:id="@+id/rlContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_lay"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvSubCategory"
+                    style="@style/RecycleView"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:layout_marginBottom="@dimen/spacing_standard" />
+
+
+                <RelativeLayout
+                    android:id="@+id/rlNewArrival"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginStart="@dimen/spacing_standard_new"
+                    android:layout_marginTop="@dimen/spacing_standard_new"
+                    android:layout_marginEnd="@dimen/spacing_standard_new">
+
+                    <TextView
+                        style="@style/Heading"
+                        android:text="@string/lbl_new_arrival" />
+
+                    <include
+                        android:id="@+id/viewNewArrival"
+                        layout="@layout/layout_view_all" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvNewArrival"
+                    style="@style/RecycleView"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:clipToPadding="false"
+                    android:paddingStart="@dimen/spacing_standard"
+                    android:paddingEnd="@dimen/spacing_standard" />
+
+
+                <RelativeLayout
+                    android:id="@+id/rlFeature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginStart="@dimen/spacing_standard_new"
+                    android:layout_marginTop="@dimen/spacing_standard_new"
+                    android:layout_marginEnd="@dimen/spacing_standard_new">
+
+                    <TextView
+                        style="@style/Heading"
+                        android:text="@string/lbl_Featured" />
+
+                    <include
+                        android:id="@+id/viewFeatured"
+                        layout="@layout/layout_view_all" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvPopular"
+                    style="@style/RecycleView"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:layout_marginBottom="@dimen/spacing_standard_new"
+                    android:clipToPadding="false"
+                    android:paddingStart="@dimen/spacing_standard"
+                    android:paddingEnd="@dimen/spacing_standard" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

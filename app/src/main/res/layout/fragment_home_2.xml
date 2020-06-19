@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.iqonic.woobox.utils.CustomSwipeToRefresh xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color_2"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_head"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_140sdp"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/homeSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="false" />
+
+                <com.iqonic.woobox.utils.dotsindicator.DotsIndicator
+                    android:id="@+id/dots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:dot_height="@dimen/spacing_control"
+                    app:dot_width="@dimen/spacing_control" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlCategory"
+                style="@style/home2PartStyle"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/lblCategory"
+                    style="@style/Heading"
+                    android:visibility="gone"
+                    android:layout_centerVertical="false"
+                    android:layout_marginStart="@dimen/spacing_standard_new"
+                    android:text="@string/lbl_categories" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvCategory"
+                    style="@style/RecycleView"
+                    android:layout_below="@id/lblCategory"
+                    android:layout_centerVertical="false"
+                    android:layout_marginBottom="@dimen/spacing_standard"
+                    android:clipToPadding="false"
+                    android:paddingEnd="@dimen/spacing_standard_new" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlDeal"
+                android:visibility="gone"
+                style="@style/home2PartStyle">
+                <TextView
+                    android:id="@+id/tvDeal"
+                    style="@style/Heading"
+                    android:layout_marginStart="@dimen/spacing_standard_new"
+                    android:layout_centerVertical="false"
+                    android:text="@string/lbl_great_deal" />
+
+                <include
+                    android:id="@+id/viewDeal"
+                    layout="@layout/layout_view_all" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvDealProducts"
+                    style="@style/RecycleView"
+                    android:layout_below="@id/tvDeal"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:paddingStart="@dimen/spacing_standard"
+                    android:paddingEnd="@dimen/spacing_standard" />
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rlNewestProduct"
+                style="@style/home2PartStyle">
+
+                <TextView
+                    android:id="@+id/tvNewestProduct"
+                    style="@style/Heading"
+                    android:layout_marginStart="@dimen/spacing_standard_new"
+                    android:layout_centerVertical="false"
+                    android:text="@string/lbl_newest_product" />
+
+                <include
+                    android:id="@+id/viewNewest"
+                    layout="@layout/layout_view_all" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvNewestProduct"
+                    style="@style/RecycleView"
+                    android:layout_below="@id/tvNewestProduct"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:paddingStart="@dimen/spacing_standard"
+                    android:paddingEnd="@dimen/spacing_standard" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rlFeatured"
+                style="@style/home2PartStyle">
+
+                <TextView
+                    android:id="@+id/tvFeatured"
+                    style="@style/Heading"
+                    android:layout_marginStart="@dimen/spacing_standard_new"
+                    android:layout_centerVertical="false"
+                    android:text="@string/lbl_Featured" />
+
+                <include
+                    android:id="@+id/viewFeatured"
+                    layout="@layout/layout_view_all" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvFeaturedProducts"
+                    android:layout_below="@id/tvFeatured"
+                    style="@style/RecycleView"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:paddingStart="@dimen/spacing_standard"
+                    android:paddingEnd="@dimen/spacing_standard" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rlRecentSearch"
+                android:visibility="gone"
+                style="@style/home2PartStyle">
+
+                <TextView
+                    android:id="@+id/lblRecentSearch"
+                    style="@style/Heading"
+                    android:layout_marginStart="@dimen/spacing_standard_new"
+                    android:layout_centerVertical="false"
+                    android:text="@string/lbl_recent_search" />
+
+                <include
+                    android:id="@+id/viewRecentSearch"
+                    layout="@layout/layout_view_all" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvRecentSearch"
+                    style="@style/RecycleView"
+                    android:layout_below="@id/lblRecentSearch"
+                    android:layout_centerVertical="false"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:paddingStart="@dimen/spacing_standard"
+                    android:paddingEnd="@dimen/spacing_standard" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/rlTestimonials"
+                android:orientation="vertical"
+                style="@style/home2PartStyle">
+
+                <TextView
+                    style="@style/Heading"
+                    android:layout_marginStart="@dimen/spacing_standard_new"
+                    android:text="@string/lbl_testimonials" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvTestimonials"
+                    style="@style/RecycleView"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:paddingStart="@dimen/spacing_standard"
+                    android:paddingEnd="@dimen/spacing_standard"
+                    android:paddingBottom="@dimen/spacing_standard_new"
+
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivBanner1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/spacing_middle"
+
+                />
+
+            <RelativeLayout
+                android:id="@+id/rlOffer"
+                android:visibility="gone"
+                style="@style/home2PartStyle">
+
+                <TextView
+                    android:id="@+id/txtOffer"
+                    style="@style/Heading"
+                    android:layout_marginStart="@dimen/spacing_standard_new"
+                    android:layout_centerVertical="false"
+                    android:text="@string/lbl_offers" />
+
+                <include
+                    android:id="@+id/viewOffer"
+                    layout="@layout/layout_view_all" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvOfferProducts"
+                    android:layout_below="@id/txtOffer"
+                    style="@style/RecycleView"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:paddingStart="@dimen/spacing_standard"
+                    android:paddingEnd="@dimen/spacing_standard" />
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/ivBanner2"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="@dimen/_180sdp"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:scaleType="fitXY" />
+
+            <RelativeLayout
+                android:id="@+id/rlSuggested"
+                style="@style/home2PartStyle"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvSuggested"
+                    style="@style/Heading"
+                    android:layout_marginStart="@dimen/spacing_standard_new"
+                    android:layout_centerVertical="false"
+                    android:text="@string/lbl_suggested" />
+
+                <include
+                    android:id="@+id/viewSuggested"
+                    layout="@layout/layout_view_all" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvSuggestedProducts"
+                    style="@style/RecycleView"
+                    android:layout_below="@id/tvSuggested"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:paddingStart="@dimen/spacing_standard"
+                    android:paddingEnd="@dimen/spacing_standard" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlYouMayLike"
+                style="@style/home2PartStyle"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvYouMayLike"
+                    style="@style/Heading"
+                    android:layout_marginStart="@dimen/spacing_standard_new"
+                    android:layout_centerVertical="false"
+                    android:text="@string/lbl_you_may_like" />
+
+                <include
+                    android:id="@+id/viewYouMayLike"
+                    layout="@layout/layout_view_all" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvYouMayLikeProducts"
+                    style="@style/RecycleView"
+                    android:layout_below="@id/tvYouMayLike"
+                    android:layout_marginTop="@dimen/spacing_standard"
+                    android:paddingStart="@dimen/spacing_standard"
+                    android:paddingEnd="@dimen/spacing_standard" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivBanner3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:scaleType="fitXY" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</com.iqonic.woobox.utils.CustomSwipeToRefresh>
+

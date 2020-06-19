@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.iqonic.woobox.models.WishListData" />
+
+        <variable
+            name="callback"
+            type="com.iqonic.woobox.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/listProductRaw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_standard_new"
+        android:layout_marginEnd="@dimen/spacing_standard_new"
+        android:layout_marginBottom="@dimen/spacing_standard_new"
+        android:background="@color/itemText_background"
+        android:onClick="@{(view) -> callback.onClick(view,model)}"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.7"
+            android:background="@color/item_background">
+
+            <ImageView
+                android:id="@+id/ivProduct"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/ic_product1" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/spacing_standard"
+            android:paddingEnd="@dimen/spacing_control">
+
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_control"
+                android:singleLine="true"
+                android:text="@{model.name}"
+                tools:text="Abstract Hooded"
+                android:textAppearance="@style/FontSemiBold"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_medium" />
+
+            <LinearLayout
+                android:id="@+id/llProductColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llProductSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_control"
+                    android:textAppearance="@style/FontSemiBold"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/font_size_small" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvProductRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:drawableEnd="@drawable/ic_star_black"
+                android:drawablePadding="@dimen/spacing_control"
+                android:text="@{model.meta.average_rating}"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_micro"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_standard"
+                android:paddingBottom="@dimen/spacing_control">
+
+                <TextView
+                    android:id="@+id/tvProductPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/FontMedium"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/font_size_medium"
+                    tools:text="$100" />
+
+                <TextView
+                    android:id="@+id/tvProductActualPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_control"
+                    android:layout_marginTop="@dimen/spacing_control_half"
+                    android:layout_marginEnd="@dimen/spacing_control"
+                    android:layout_toEndOf="@id/tvProductPrice"
+                    android:textAppearance="@style/FontSemiBold"
+                    android:textColor="@color/dots_color"
+                    android:textSize="@dimen/font_size_micro"
+                    tools:text="$100" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/llMoveToCart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{(view) -> callback.onClick(view,model)}"
+                    android:paddingTop="@dimen/spacing_standard"
+                    android:paddingBottom="@dimen/spacing_standard">
+
+                    <TextView
+                        style="@style/CartButton"
+                        android:drawableLeft="@drawable/ic_shopping_cart_small"
+                        android:drawableTint="@color/black"
+                        android:text="@string/lbl_move_to_cart" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/spacing_control_half"
+                    android:layout_marginTop="@dimen/spacing_control_half"
+                    android:layout_marginBottom="@dimen/spacing_control_half"
+                    android:background="@color/view_color" />
+
+                <LinearLayout
+                    android:id="@+id/btnRemove"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:onClick="@{(view) -> callback.onClick(view,model)}"
+                    android:paddingTop="@dimen/spacing_standard"
+                    android:paddingBottom="@dimen/spacing_standard">
+
+                    <TextView
+                        style="@style/CartButton"
+                        android:drawableTint="@color/black"
+                        android:drawableLeft="@drawable/ic_delete"
+                        android:text="@string/lbl_remove" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
